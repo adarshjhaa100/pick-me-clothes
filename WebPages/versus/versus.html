@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<title>Versus</title>
+<script>
+arr = ['dataset-images/MTB1.jpg','dataset-images/MTB2.jpg','dataset-images/MTB3.jpg','dataset-images/MTB4.jpg','dataset-images/MTB5.png','dataset-images/MTB6.jpg','dataset-images/MTB7.jpg','dataset-images/MTB8.jpg','dataset-images/MTB9.jpg','dataset-images/MTB10.jpg']
+i=0;
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    console.log(array)
+    return array;
+}
+result = []
+function clicked(a){
+    console.log('asd')
+    if(a==1)result.push(arr[2*i]);
+    else result.push(arr[2*i+1]);
+    i++;
+    document.getElementById('i1').src=arr[2*i];
+    document.getElementById('i2').src=arr[2*i+1];
+    if(i==3){
+        console.log(result);    
+    }
+    return;
+}
+arr = shuffleArray(arr);
+console.log('a');
+    
+</script>
+<style>
+div img {
+    width: 100%;
+    min-height: 100%;
+}</style>
+</head>
+<body>
+    <h1 style="text-align: center;font-size: 100px">Title</h1>
+    <div class="col-lg-2"></div>
+    <div class="col-lg-3" class="img-responsive" ><img id="i1" style="margin-top: 50px;" src="dataset-images/MTB1.jpg" onclick="clicked(1)"  width="100%"></div>
+    <div class="col-lg-2" class="img-responsive" ><img src="images/vs.png" style="margin-top:100px"  width="100%"></div>
+    <div class="col-lg-3" class="img-responsive"   width="100%"><img id="i2" style="margin-top: 50px;" src="dataset-images/MTB10.jpg" onclick="clicked(1)"></div>
+    <div class="col-lg-2"></div>
+<script>
+    document.getElementById('i1').href=arr[0];
+document.getElementById('i2').href=arr[1];
+i++;    
+    </script>
+
+</body>
+</html>
